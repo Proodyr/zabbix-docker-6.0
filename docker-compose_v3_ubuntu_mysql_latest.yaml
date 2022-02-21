@@ -2,6 +2,7 @@ version: '3.5'
 services:
  zabbix-server:
   image: zabbix/zabbix-server-mysql:ubuntu-6.0-latest
+  platform: linux/amd64
   ports:
    - "10051:10051"
   volumes:
@@ -64,6 +65,7 @@ services:
 
  zabbix-proxy-sqlite3:
   image: zabbix/zabbix-proxy-sqlite3:ubuntu-latest
+  platform: linux/amd64
   profiles:
    - all
   ports:
@@ -112,6 +114,7 @@ services:
 
  zabbix-proxy-mysql:
   image: zabbix/zabbix-proxy-mysql:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - all
   ports:
@@ -167,6 +170,7 @@ services:
 
  zabbix-web-apache-mysql:
   image: zabbix/zabbix-web-apache-mysql:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - all
   ports:
@@ -222,6 +226,7 @@ services:
 
  zabbix-web-nginx-mysql:
   image: zabbix/zabbix-web-nginx-mysql:ubuntu-6.0-latest
+  platform: linux/amd64
   ports:
    - "80:8080"
    - "443:8443"
@@ -275,6 +280,7 @@ services:
 
  zabbix-agent:
   image: zabbix/zabbix-agent:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - full
    - all
@@ -314,6 +320,7 @@ services:
 
  zabbix-java-gateway:
   image: zabbix/zabbix-java-gateway:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - full
    - all
@@ -343,6 +350,7 @@ services:
 
  zabbix-snmptraps:
   image: zabbix/zabbix-snmptraps:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - full
    - all
@@ -372,6 +380,7 @@ services:
 
  zabbix-web-service:
   image: zabbix/zabbix-web-service:ubuntu-6.0-latest
+  platform: linux/amd64
   profiles:
    - full
    - all
@@ -405,6 +414,7 @@ services:
 
  mysql-server:
   image: mysql:8.0
+  platform: linux/amd64
   command:
    - mysqld
    - --character-set-server=utf8mb4
